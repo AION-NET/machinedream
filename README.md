@@ -70,59 +70,58 @@ Execute the script from your terminal.
 
 **A. Automated Mode (Run N Cycles):**
 
+Run 50 automated cycles with defaults
 ```bash
-# Run 50 automated cycles with defaults
-python machinedream_v1.1.1.py -n 50
-
-# Run 20 cycles, custom memory, different initial state
-python machinedream_v1.1.1.py -n 20 --max-memory 50 --init-complexity 7 --init-abstraction 0.4
-
-# Run 10 cycles, different file, custom targets (JSON string)
+python3 machinedream_v1.1.1.py -n 50
+```
+Run 20 cycles, custom memory, different initial state
+```bash
+python3 machinedream_v1.1.1.py -n 20 --max-memory 50 --init-complexity 7 --init-abstraction 0.4
+```
+Run 10 cycles, different file, custom targets (JSON string)
+```python3
 python machinedream_v1.1.1.py -n 10 --memory-file custom_mem.json --target-ranges '{"utility": [0.5,0.9]}'
-Use code with caution.
-Markdown
-B. Interactive Mode (Manual Control):
-# Start interactive mode
-python machinedream_v1.1.1.py
-Use code with caution.
-Bash
-Interactive Commands:
-dream [id] [size] [comp]: Trigger a dream cycle (optional args).
-status: Show current parameters, memory, metrics, mode, history.
-insight [id]: Display latest high-importance insight or by specific ID (shows utility).
-assess: Manually run assessment and display full tuning_data.
-tune_data: Show the tuning_data JSON from the last assessment.
-api [prompt]: Simulate external API call using latest insight context. Records simulated utility.
-set <param> <value>: Manually set complexity, abstraction, or tuning.
-clear: Wipe memory and assessment history (requires confirmation).
-exit: Quit.
-Configuring the Simulation
-Adjust behavior via:
-CLI Arguments:
--n/--num_loops: Number of automated cycles (0 for interactive).
---max-memory: Max insights stored.
---memory-file: Path to state JSON file.
---init-*: Set initial complexity, abstraction, tuning.
---abs-step: Base step for abstraction tuning.
---age-penalty: Factor for age weighting in pruning.
---damping-factor: Factor for reducing step size during oscillation.
---target-ranges: JSON string defining ideal metric ranges (e.g., '{"importance": [0.5,0.9]}').
---svg: Enable optional SVG output on exit.
-Constants: Edit internal constants like MIN_MEMORY_FOR_ASSESSMENT, RECOMMENDATION_HISTORY_LENGTH, UTILITY_WEIGHT_IN_PRUNING, parameter bounds (MIN/MAX_*).
-.env File (Potential): Future use for loading external configs (requires python-dotenv).
-Connecting Externally (Integration Points)
-Receiving Data: Provide input_data_metadata dictionaries to run_dream_cycle.
-Providing Tuning Data: Consume the JSON output from assess_state (accessible via _last_assessment_data or tune_data command) in an external autotuning system. Use normalized metrics, status, mode, and suggested adjustments.
-Sharing Insights: Use get_latest_insight to fetch symbolic context (symbolic_insight, key_themes) for other AI components (e.g., via the call_external_multimodal_model placeholder representing an api.py call to Gemini).
-Receiving Utility Feedback: Call record_insight_utility(dream_id, score) from external components after they use an insight to provide feedback (0-1 score) on its usefulness.
-Acknowledging Limits
-It's a Simulation: This engine uses abstract heuristics and randomness. It does not perform real data analysis, semantic understanding, or AI training. Insights and metrics are simulated constructs.
-Heuristics Rule: Behavior depends heavily on arbitrary simulation rules, thresholds, weights, and target ranges that lack empirical validation.
-Insight Validity Unknown: Generated insights aren't validated for correctness or real-world meaning. "Breakthroughs" are simulated chance events.
-Utility Loop Incomplete: Utility feedback currently only impacts pruning; it doesn't yet adapt the insight generation or assessment logic.
-Integration is Conceptual: Links to external systems (data sources, autotuners, API models) are placeholders demonstrating potential connections.
-Scalability: Designed as a single-instance simulation using file persistence, unsuitable for large-scale distributed use without significant architecture changes.
-Governing Licenses
+```
+# Interactive Mode (Manual Control):<br />
+Start interactive mode<br />
+```python
+python3 machinedream_v1.1.1.py
+```
+Interactive Commands:<br />
+dream [id] [size] [comp]: Trigger a dream cycle (optional args)<br />
+status: Show current parameters, memory, metrics, mode, history<br />
+insight [id]: Display latest high-importance insight or by specific ID (shows utility)<br />
+assess: Manually run assessment and display full tuning_data<br />
+tune_data: Show the tuning_data JSON from the last assessment<br />
+api [prompt]: Simulate external API call using latest insight context. Records simulated utility<br />
+set <param> <value>: Manually set complexity, abstraction, or tuning<br />
+clear: Wipe memory and assessment history (requires confirmation)<br />
+exit: Quit<br />
+
+# Configuring the Simulation
+CLI Arguments:<br />
+-n/--num_loops: Number of automated cycles (0 for interactive)<br />
+--max-memory: Max insights stored<br />
+--memory-file: Path to state JSON file<br />
+--init-*: Set initial complexity, abstraction, tuning<br />
+--abs-step: Base step for abstraction tuning<br />
+--age-penalty: Factor for age weighting in pruning<br />
+--damping-factor: Factor for reducing step size during oscillation<br />
+--target-ranges: JSON string defining ideal metric ranges (e.g., '{"importance": [0.5,0.9]}')<br />
+--svg: Enable optional SVG output on exit<br />
+Constants: Edit internal constants like MIN_MEMORY_FOR_ASSESSMENT, RECOMMENDATION_HISTORY_LENGTH, UTILITY_WEIGHT_IN_PRUNING, parameter bounds (MIN/MAX_*)<br />
+.env File (Potential): Future use for loading external configs (requires python-dotenv)<br />
+Connecting Externally (Integration Points)<br />
+Receiving Data: Provide input_data_metadata dictionaries to run_dream_cycle<br />
+Providing Tuning Data: Consume the JSON output from assess_state (accessible via _last_assessment_data or tune_data command) in an external autotuning system. Use normalized metrics, status, mode, and suggested adjustments<br />
+Sharing Insights: Use get_latest_insight to fetch symbolic context (symbolic_insight, key_themes) for other AI components (e.g., via the call_external_multimodal_model placeholder representing an api.py call to Gemini)<br />
+Receiving Utility Feedback: Call record_insight_utility(dream_id, score) from external components after they use an insight to provide feedback (0-1 score) on its usefulness<br />
+# Acknowledging Limits
+It's a Simulation: This engine uses abstract heuristics and randomness. It does not perform real data analysis, semantic understanding, or AI training. Insights and metrics are simulated constructs<br />
+Heuristics Rule: Behavior depends heavily on arbitrary simulation rules, thresholds, weights, and target ranges that lack empirical validation<br />
+Insight Validity Unknown: Generated insights aren't validated for correctness or real-world meaning. "Breakthroughs" are simulated chance events<br />
+Utility Loop Incomplete: Utility feedback currently only impacts pruning; it doesn't yet adapt the insight generation or assessment logic<br />
+Integration is Conceptual: Links to external systems (data sources, autotuners, API models) are placeholders demonstrating potential connections<br />
+Scalability: Designed as a single-instance simulation using file persistence, unsuitable for large-scale distributed use without significant architecture changes<br />
 Concept: MIT License (Gregory L. Magnusson 2024)
 Code Implementation: BSD 3-Clause License (PYTHAI 2024)
-Use code with caution.
