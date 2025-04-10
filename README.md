@@ -132,7 +132,7 @@ Import Utility Feedback: Call record_insight_utility(dream_id, score) from exter
 Heuristic Dependency: Behavior hinges on simulation rules, thresholds, weights, and target ranges lacking empirical validation<br />
 Insight Validity Unverified: Generated insights aren't checked for correctness or real-world meaning. "Breakthroughs" are simulated chance events<br />
 Partial Utility Loop: Utility feedback influences pruning but doesn't yet adapt the insight generation or assessment logic<br />
-Conceptual Integration: Links to external systems are placeholders demonstrating potential, not implemented connections<br /> />
+Conceptual Integration: Links to external systems are placeholders demonstrating potential, not implemented connections<br />
 Scalability Constraints: Single-instance, file-based design limits use in large-scale or distributed systems<br /><br />
 
 Concept: MIT License (Gregory L. Magnusson 2024)<br />
