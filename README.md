@@ -20,7 +20,7 @@
 
 ## Taming the Data Deluge: Why Machines Must Dream
 
-Modern AI, especially architectures integrating **Agentic** actors (`OpenMind`) and **Augmentic** data enhancers, grapples with an exponential influx of information. Real-time interactions and synthetic data generation create a high-velocity, high-dimensional data tsunami<br />
+Modern AI, especially architectures integrating **Agentic** actors (`<a href="https://github.com/openmindx">OpenMind`) and **<a href="https://github.com/augmentic">Augmentic</a>** data enhancers, grapples with an exponential influx of information. Real-time interactions and synthetic data generation create a high-velocity, high-dimensional data tsunami<br />
 
 Attempting to learn directly from this raw stream invites inefficiency and instability:
 
