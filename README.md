@@ -73,25 +73,30 @@ Execute `machinedream_v1.1.1.py` from your terminal.
 
 **🚀 Automated Mode (Run N Cycles)**
 
+
+Example: Run 50 cycles with defaults
 ```bash
-# Example: Run 50 cycles with defaults
 python3 machinedream_v1.1.1.py -n 50
+```
 
-# Example: Run 20 cycles, custom settings
+Example: Run 20 cycles, custom settings
+```bash
 python3 machinedream_v1.1.1.py -n 20 --max-memory 50 --init-complexity 7 --age-penalty 0.01
+```
 
-# Example: Custom targets via JSON string
+Example: Custom targets via JSON string
+```bash
 python3 machinedream_v1.1.1.py -n 10 --target-ranges '{"utility": [0.5,0.9]}'
-Use code with caution.
-Markdown
+```
+
 ▶️ Interactive Mode (Manual Control)
-# Start interactive session
+Start interactive session
+```bash
 python3 machinedream_v1.1.1.py
-Use code with caution.
-Bash
+```
 Interactive Commands:
 MachineDream> help  # (Conceptual - list commands below)
-Use code with caution.
+```txt
 dream [id] [sz] [comp] : Trigger a dream cycle (args optional).
 status : View current parameters, memory stats, metrics, mode, history.
 insight [id] : Show latest high-importance insight or details for a specific ID.
@@ -120,8 +125,9 @@ Connect machinedream to a larger system:
 Ingest Data: Feed input_data_metadata dictionaries into run_dream_cycle to trigger refinement based on external events or data batches.
 Export Tuning Data: Consume the structured JSON from assess_state (via _last_assessment_data or tune_data command) in an external autotuning system. Leverage normalized metrics, system mode, and suggested adjustments.
 Share Insights: Use get_latest_insight to retrieve symbolic context (symbolic_insight, key_themes) for other AI modules (e.g., injecting context into prompts for LLMs like Gemini via api.py).
-Import Utility Feedback: Call record_insight_utility(dream_id, score) from external components after using an insight, providing a 0-1 score reflecting its perceived usefulness, influencing subsequent pruning.
-Grounding Expectations: Acknowledging Limits
+Import Utility Feedback: Call record_insight_utility(dream_id, score) from external components after using an insight, providing a 0-1 score reflecting its perceived usefulness, influencing subsequent pruning
+```
+# Grounding Expectations: Acknowledging Limits
 ❗ Crucially, this is a Simulation: The engine employs abstract heuristics and randomness. It does not perform real data analysis, semantic understanding, or AI training. Insights, metrics, and tuning effects are simulated constructs.
 Heuristic Dependency: Behavior hinges on simulation rules, thresholds, weights, and target ranges lacking empirical validation.
 Insight Validity Unverified: Generated insights aren't checked for correctness or real-world meaning. "Breakthroughs" are simulated chance events.
