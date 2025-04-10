@@ -4,8 +4,9 @@
   <h1>⚙️ Machine Dream Engine (v1.1.1)</h1>
 </p>
 
-**Conceptual Origin:** Gregory L. Magnusson | **Code Implementation:** PYTHAI (Based on Concepts)
-**Licenses:** MIT (Concept) / BSD v3 (Code Implementation)
+**Conceptual Origin:** Gregory L. Magnusson<br />
+**Code Implementation:** PYTHAI (from conceptual origin)<br />
+**Licenses:** MIT (Concept) / BSD v3 (Code Implementation)<br />
 
 ---
 
