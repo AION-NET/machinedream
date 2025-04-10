@@ -65,6 +65,6 @@ Fifth, the `tuning_data` produced by `assess_state` serves as the primary output
 ## Memory Management
 
 Dream insights are stored chronologically as dictionaries in the `self.memory` list<br />
-When memory exceeds `max_memory_size`, `prune_memory` calculates a combined score for each insight using its `importance_score` (penalized by age via <br />`age_penalty_factor`) and its recorded `utility_score` (defaulting to neutral if unavailable)<br />
+When memory exceeds `max_memory_size`, `prune_memory` calculates a combined score for each insight using its `importance_score` (penalized by age via `age_penalty_factor`) and its recorded `utility_score` (defaulting to neutral if unavailable)<br />
 It removes the `N` insights with the lowest combined scores<br />
 The entire `self.memory` list and key metadata are persisted to a JSON file via `save_memory` and reloaded by `load_memory`<br />
