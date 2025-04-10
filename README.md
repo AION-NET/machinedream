@@ -131,7 +131,7 @@ Import Utility Feedback: Call record_insight_utility(dream_id, score) from exter
 # Grounding Expectations: Acknowledging Limits
 ❗ Crucially, this is a Simulation: The engine employs abstract heuristics and randomness. It does not perform real data analysis, semantic understanding, or AI training. Insights, metrics, and tuning effects are simulated constructs<br /><br />
 Heuristic Dependency: Behavior hinges on simulation rules, thresholds, weights, and target ranges lacking empirical validation<br />
-Insight Validity Unverified: Generated insights are not checked for correctness or meaning,br />
+Insight Validity Unverified: Generated insights are not checked for correctness or meaning<br />
 "Breakthroughs" are simulated chance events<br />
 Partial Utility Loop: Utility feedback influences pruning but does not yet adapt the insight generation or assessment logic<br />
 Conceptual Integration: Links to external systems are placeholders demonstrating potential, not implemented connections<br />
