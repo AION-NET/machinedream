@@ -56,15 +56,15 @@ Tuning Application modifies parameters based on assessment recommendations, adju
 ## Self-Tuning Mechanism
 
 The engine employs a closed internal loop
-First, `assess_state` analyzes recent dream history based on multiple metrics and detects oscillation
-Second, it generates `tuning_data` containing metrics, status, system mode, and specific recommendations (`suggested_adjustments`)
-Third, `apply_tuning` modifies the instance's parameters according to these suggestions, incorporating damping logic
-Fourth, the next `run_dream_cycle` uses the newly tuned parameters, influencing subsequent insights and metrics
-Fifth, the `tuning_data` produced by `assess_state` serves as the primary output for potential consumption by an external autotuning system
+First, `assess_state` analyzes recent dream history based on multiple metrics and detects oscillation<br />
+Second, it generates `tuning_data` containing metrics, status, system mode, and specific recommendations (`suggested_adjustments`)<br />
+Third, `apply_tuning` modifies the instance's parameters according to these suggestions, incorporating damping logic<br />
+Fourth, the next `run_dream_cycle` uses the newly tuned parameters, influencing subsequent insights and metrics<br />
+Fifth, the `tuning_data` produced by `assess_state` serves as the primary output for potential consumption by an external autotuning system<br />
 
 ## Memory Management
 
-Dream insights are stored chronologically as dictionaries in the `self.memory` list
-When memory exceeds `max_memory_size`, `prune_memory` calculates a combined score for each insight using its `importance_score` (penalized by age via `age_penalty_factor`) and its recorded `utility_score` (defaulting to neutral if unavailable)
-It removes the `N` insights with the lowest combined scores
-The entire `self.memory` list and key metadata are persisted to a JSON file via `save_memory` and reloaded by `load_memory`
+Dream insights are stored chronologically as dictionaries in the `self.memory` list<br />
+When memory exceeds `max_memory_size`, `prune_memory` calculates a combined score for each insight using its `importance_score` (penalized by age via <br />`age_penalty_factor`) and its recorded `utility_score` (defaulting to neutral if unavailable)<br />
+It removes the `N` insights with the lowest combined scores<br />
+The entire `self.memory` list and key metadata are persisted to a JSON file via `save_memory` and reloaded by `load_memory`<br />
