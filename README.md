@@ -128,12 +128,12 @@ Share Insights: Use get_latest_insight to retrieve symbolic context (symbolic_in
 Import Utility Feedback: Call record_insight_utility(dream_id, score) from external components after using an insight, providing a 0-1 score reflecting its perceived usefulness, influencing subsequent pruning
 ```
 # Grounding Expectations: Acknowledging Limits
-❗ Crucially, this is a Simulation: The engine employs abstract heuristics and randomness. It does not perform real data analysis, semantic understanding, or AI training. Insights, metrics, and tuning effects are simulated constructs<br />
-Heuristic Dependency: Behavior hinges on simulation rules, thresholds, weights, and target ranges lacking empirical validation<br />
-Insight Validity Unverified: Generated insights aren't checked for correctness or real-world meaning. "Breakthroughs" are simulated chance events<br />
-Partial Utility Loop: Utility feedback influences pruning but doesn't yet adapt the insight generation or assessment logic<br />
-Conceptual Integration: Links to external systems are placeholders demonstrating potential, not implemented connections<br />
-Scalability Constraints: Single-instance, file-based design limits use in large-scale or distributed systems<br /><br />
+❗ Crucially, this is a Simulation: The engine employs abstract heuristics and randomness. It does not perform real data analysis, semantic understanding, or AI training. Insights, metrics, and tuning effects are simulated constructs<br /><br />
+Heuristic Dependency: Behavior hinges on simulation rules, thresholds, weights, and target ranges lacking empirical validation<br /><br />
+Insight Validity Unverified: Generated insights aren't checked for correctness or real-world meaning. "Breakthroughs" are simulated chance events<br /><br />
+Partial Utility Loop: Utility feedback influences pruning but doesn't yet adapt the insight generation or assessment logic<br /><br />
+Conceptual Integration: Links to external systems are placeholders demonstrating potential, not implemented connections<br /> /><br />
+Scalability Constraints: Single-instance, file-based design limits use in large-scale or distributed systems<br /><br /><br />
 
 Concept: MIT License (Gregory L. Magnusson 2024)<br />
 Code Implementation: BSD 3-Clause License (PYTHAI 2024)
